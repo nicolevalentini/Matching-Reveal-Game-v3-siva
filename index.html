@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matching Reveal Game</title>
+  <!-- Surf rock style font: Bangers -->
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="instructions" id="instructionsBox">
+    <h1>Welcome to the Matching Reveal Game!</h1>
+    <p>Match the tiles to reveal a secret message.</p>
+    <p>You have 2 minutes to complete the challenge.</p>
+    <button class="start-button" onclick="startGame()">Start Game</button>
+  </div>
+  <div class="game-board" id="gameBoard"></div>
+  
+  <div class="timer-container" id="timerContainer">
+    <div class="timer-text" id="timerText">120</div>
+  </div>
+  
+  <!-- New reward display (replacing envelope) -->
+  <div class="reward-container" id="rewardContainer">
+    <div class="reward-content">
+      <img src="doggy.jpg" alt="Dog" class="doggy-left">
+      <div class="message-wrapper">
+        <div class="message-content" id="messageContent">
+          <h2>Hai vinto! Grande!</h2>
+          <p>Ecco qui un QR code per scaricare un simpatico wallpaper per cellulare.</p>
+          <p>Art by <a href="https://www.instagram.com/siva_jpg/" target="_blank">@siva_jpg</a></p>
+          <div class="qr-code">
+            <img src="qrcode.png" alt="QR Code">
+          </div>
+        </div>
+      </div>
+      <img src="doggy.jpg" alt="Dog" class="doggy-right">
+    </div>
+  </div>
+  
+  <div class="confetti" id="confetti"></div>
+  
+  <!-- Audio elements -->
+  <audio id="clickSound" src="./mouse-click-sound-233951.mp3" preload="auto"></audio>
+  <audio id="matchSound" src="./bubblepop-254773.mp3" preload="auto"></audio>
+  <audio id="winSound" src="./success-fanfare-trumpets-6185.mp3" preload="auto"></audio>
+  <audio id="tickSound" src="./clock-tick.mp3" preload="auto"></audio>
+  <audio id="timeoutSound" src="./timeout-buzzer.mp3" preload="auto"></audio>
+  <audio id="backgroundMusic" src="./welcome.mp3" preload="auto"></audio>
+
+  <!-- QR Code library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
