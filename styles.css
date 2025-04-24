@@ -1,19 +1,36 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Quicksand', sans-serif;
-  background: url('back.jpg');
+  font-family: 'Poppins', sans-serif; /* Modern, clean font */
+  background-color: #ebe3d7; /* Warm frame color that complements the game theme */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  overflow: hidden;
+}
+
+/* Background image styling with proper centering and frame */
+body::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150vmin;
+  height: 90vmin;
+  background: url('back.jpg') center center no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(90, 62, 54, 0.2);
+  z-index: -1;
 }
 
 h1, h2, .start-button {
-  font-family: 'Bangers', cursive; /* Surf rock style font */
-  text-transform: none; /* Prevent all caps */
-  letter-spacing: 1px; /* Better readability for this font */
+  font-family: 'Paytone One', sans-serif; /* More modern, fun font replacing Bangers */
+  text-transform: none;
+  letter-spacing: 0.5px;
 }
 
 /* Only capitalize main titles */
@@ -22,29 +39,33 @@ h1, h2 {
 }
 
 .instructions {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
   border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  box-shadow: 0 15px 35px rgba(90, 62, 54, 0.25);
   text-align: center;
   margin-bottom: 20px;
   transition: opacity 0.5s ease;
+  max-width: 500px;
 }
 
 .start-button {
   background: #ff8563;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 12px 26px;
+  font-size: 18px;
   color: white;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 133, 99, 0.3);
 }
 
 .start-button:hover {
   background: #ff6843;
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(255, 133, 99, 0.4);
 }
 
 .game-board {
@@ -90,7 +111,7 @@ h1, h2 {
   opacity: 0;
 }
 
-/* New reward display styles */
+/* Improved reward display styles */
 .reward-container {
   display: none;
   position: fixed;
@@ -104,42 +125,58 @@ h1, h2 {
   justify-content: center;
 }
 
+/* Completely redesigned reward content layout */
 .reward-content {
-  display: flex;
+  position: relative;
   width: 90%;
-  max-width: 1000px;
+  max-width: 800px;
+  min-height: 400px;
+  display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
+/* Improved dog image positioning */
 .doggy-left {
-  transform: scaleX(-1); /* Mirror the left image so it faces inward */
-  max-width: 200px;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0;
+  transform: translateX(-50%) scaleX(-1); /* Move left and mirror */
+  top: 50%; /* Centers vertically */
+  margin-top: -90px; /* Adjust this to move up or down */
+  max-width: 180px;
+  z-index: 1;
 }
 
 .doggy-right {
-  /* Right image faces inward by default */
-  max-width: 200px;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  right: 0;
+  transform: translateX(-55%); /* Move left */
+  top: 50%; /* Centers vertically */
+  margin-top: -90px; /* Adjust this to move up or down */
+  max-width: 180px;
+  z-index: 1;
 }
 
 .message-wrapper {
-  flex: 1;
-  margin: 0 30px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  width: 70%;
+  max-width: 500px;
   text-align: center;
+  z-index: 2;
 }
 
 .message-content {
   opacity: 0;
   transition: opacity 1s ease;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .message-content h2 {
-  font-family: 'Bangers', cursive;
+  font-family: 'Paytone One', sans-serif;
   font-size: 36px;
   margin-bottom: 20px;
   color: #5a3e36;
@@ -191,6 +228,7 @@ h1, h2 {
   color: #ff6843;
   text-decoration: none;
   transition: all 0.3s ease;
+  font-weight: 600;
 }
 
 .message-content a:hover {
@@ -198,14 +236,24 @@ h1, h2 {
   text-decoration: underline;
 }
 
-.qr-code {
+.qr-code-container {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
+  width: 100%;
 }
 
-.qr-code img {
-  max-width: 150px;
-  border: 5px solid white;
-  border-radius: 10px;
+.qr-code {
+  display: inline-block;
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Update the animation for the QR code */
+.message-content.show .qr-code-container {
+  animation: wobble 1.5s 0.8s;
 }
 
 .confetti {
@@ -270,15 +318,29 @@ h1, h2 {
 @media (max-width: 768px) {
   .reward-content {
     flex-direction: column;
+    min-height: auto;
+    padding: 20px 0;
   }
   
-  .doggy-left, .doggy-right {
-    max-width: 150px;
-    margin: 15px 0;
+  .doggy-left {
+    position: relative;
+    transform: scaleX(-1);
+    left: auto;
+    max-width: 120px;
+    margin-bottom: 15px;
+  }
+  
+  .doggy-right {
+    position: relative;
+    transform: none;
+    right: auto;
+    max-width: 120px;
+    margin-top: 15px;
   }
   
   .message-wrapper {
-    margin: 20px 0;
+    width: 90%;
+    padding: 20px;
   }
   
   .message-content h2 {

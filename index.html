@@ -10,9 +10,9 @@
 </head>
 <body>
   <div class="instructions" id="instructionsBox">
-    <h1>Welcome to the Matching Reveal Game!</h1>
-    <p>Match the tiles to reveal a secret message.</p>
-    <p>You have 2 minutes to complete the challenge.</p>
+    <h1>Abbina le tessere per ottenere una simpatica sorpresa!</h1>
+    <p>Hai 2 minuti per completare la sfida</p>
+    <p>Art by Siva_jpg</p>
     <button class="start-button" onclick="startGame()">Start Game</button>
   </div>
   <div class="game-board" id="gameBoard"></div>
@@ -24,18 +24,20 @@
   <!-- New reward display (replacing envelope) -->
   <div class="reward-container" id="rewardContainer">
     <div class="reward-content">
-      <img src="doggy.jpg" alt="Dog" class="doggy-left">
+      <img src="doggy.png" alt="Dog" class="doggy-left">
       <div class="message-wrapper">
-        <div class="message-content" id="messageContent">
-          <h2>Hai vinto! Grande!</h2>
-          <p>Ecco qui un QR code per scaricare un simpatico wallpaper per cellulare.</p>
-          <p>Art by <a href="https://www.instagram.com/siva_jpg/" target="_blank">@siva_jpg</a></p>
-          <div class="qr-code">
-            <img src="qrcode.png" alt="QR Code">
-          </div>
+       <!-- This is part of index.html - update the message-content div to this: -->
+  <div class="message-content" id="messageContent">
+    <h2>Hai vinto! Grande!</h2>
+    <p>Ecco qui un QR code per scaricare un simpatico wallpaper per cellulare.</p>
+    <p>Art by <a href="https://www.instagram.com/siva_jpg/" target="_blank">@siva_jpg</a></p>
+    <div class="qr-code-container">
+      <div class="qr-code"></div>
+   </div>
+  </div>
         </div>
       </div>
-      <img src="doggy.jpg" alt="Dog" class="doggy-right">
+      <img src="doggy.png" alt="Dog" class="doggy-right">
     </div>
   </div>
   

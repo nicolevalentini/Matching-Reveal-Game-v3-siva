@@ -217,7 +217,7 @@ function celebrateWin() {
 
 function generateQRCode() {
   // The URL to your downloadable image
-  const imageUrl = "https://yourusername.github.io/game-wallpaper/wallpaper.jpg";
+  const imageUrl = "https://imgur.com/a/H6waRaB";
   
   // Clear any existing QR code
   document.querySelector('.qr-code').innerHTML = '';
