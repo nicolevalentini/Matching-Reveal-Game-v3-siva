@@ -19,7 +19,7 @@ function startGame() {
   
   // Reset game state
   document.getElementById('rewardContainer').style.display = 'none';
-  document.getElementById('instructionsBox').style.opacity = '1';
+  document.getElementById('instructionsBox').style.display = 'none';
   gameBoard.style.display = 'flex';
   gameBoard.innerHTML = '';
   timeRemaining = 120;
