@@ -140,7 +140,7 @@ h1, h2 {
 .doggy-left {
   position: absolute;
   left: 0;
-  transform: translateX(-50%) scaleX(-1); /* Move left and mirror */
+  transform: translateX(-35%) scaleX(-1); /* Move left and mirror */
   top: 50%; /* Centers vertically */
   margin-top: -90px; /* Adjust this to move up or down */
   max-width: 180px;
@@ -150,7 +150,7 @@ h1, h2 {
 .doggy-right {
   position: absolute;
   right: 0;
-  transform: translateX(-60%); /* Move left */
+  transform: translateX(35%); /* Move left */
   top: 50%; /* Centers vertically */
   margin-top: -90px; /* Adjust this to move up or down */
   max-width: 180px;
