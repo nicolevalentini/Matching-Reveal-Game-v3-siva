@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  <title>Gioco di Abbinamento - Art by Siva_jpg</title>
+  <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Cross-browser polyfills -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6,IntersectionObserver,ResizeObserver,NodeList.prototype.forEach,Element.prototype.classList"></script>
+</head>
+<body>
+  <!-- Browser compatibility notice (hidden by default) -->
+  <div id="browserNotice" class="browser-notice">
+    <div class="notice-content">
+      <p>Per la migliore esperienza, utilizza un browser moderno come Chrome, Firefox, Safari o Edge.</p>
+      <button onclick="dismissNotice()">Continua Comunque</button>
+    </div>
+  </div>
+
+  <!-- Game Header -->
+  <div class="game-header">
+    <h1 class="game-title">Gioco di Abbinamento</h1>
+    <div class="progress-container" id="progressContainer">
+      <span class="progress-text" id="progressText">0/12</span>
+    </div>
+  </div>
+
+  <div class="instructions" id="instructionsBox">
+    <div class="instruction-content">
+      <h2>Abbina le tessere per ottenere una simpatica sorpresa!</h2>
+      <p>Hai 2 minuti per completare la sfida</p>
+      <p class="art-credit">Art by <a href="https://www.instagram.com/siva_jpg/" target="_blank">@siva_jpg</a></p>
+      <button class="start-button" onclick="startGame()">
+        <span class="button-icon">🎨</span>
+        Inizia Gioco
+      </button>
+    </div>
+  </div>
+  
+  <div class="game-board" id="gameBoard"></div>
+  
+  <div class="timer-container" id="timerContainer">
+    <div class="timer-circle">
+      <div class="timer-text" id="timerText">120</div>
+    </div>
+  </div>
+  
+  <!-- Reward Container -->
+  <div class="reward-container" id="rewardContainer">
+    <div class="confetti-wrapper" id="confettiWrapper"></div>
+    
+    <div class="reward-wrapper">
+      <div class="reward-content">
+        <img src="doggy.png" alt="Dog" class="doggy-left">
+        <div class="message-wrapper">
+          <div class="message-content" id="messageContent">
+            <h2>Hai vinto! Grande!</h2>
+            <p>Ecco qui un QR code per scaricare un simpatico wallpaper per desktop e cellulare.</p>
+            <p>Art by <a href="https://www.instagram.com/siva_jpg/" target="_blank">@siva_jpg</a></p>
+            <div class="qr-code-container">
+              <div class="qr-code" id="qrCode"></div>
+            </div>
+          </div>
+        </div>
+        <img src="doggy.png" alt="Dog" class="doggy-right">
+      </div>
+    </div>
+    
+    <div class="action-buttons" id="actionButtons">
+      <button class="action-button primary" onclick="startGame()">
+        <span class="button-icon">🎨</span>
+        Gioca Ancora
+      </button>
+      <button class="action-button secondary" onclick="resetToMenu()">
+        Torna al Menu
+      </button>
+    </div>
+  </div>
+  
+  <div class="confetti" id="confetti"></div>
+  
+  <!-- Audio elements with multiple formats -->
+  <audio id="clickSound" preload="auto">
+    <source src="./mouse-click-sound-233951.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="matchSound" preload="auto">
+    <source src="./bubblepop-254773.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="winSound" preload="auto">
+    <source src="./success-fanfare-trumpets-6185.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="tickSound" preload="auto">
+    <source src="./clock-tick.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="timeoutSound" preload="auto">
+    <source src="./timeout-buzzer.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="backgroundMusic" preload="auto">
+    <source src="./welcome.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- QR Code library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
